@@ -1,0 +1,10 @@
+CREATE VIEW VmItemProducts
+AS
+SELECT dbo.TbProducts.ProductId, dbo.TbProducts.ProductName, dbo.TbProducts.Images, dbo.TbProducts.Description, dbo.TbProducts.Price, dbo.TbProducts.StockQuentity, dbo.TbProducts.SupplierId, dbo.TbProducts.PharmcistId, 
+                  dbo.TbProducts.ProdcutsClassificationId, dbo.TbProdcutsClassification.ProdcutsClassificationId AS Expr1, dbo.TbProdcutsClassification.ProdcutsClassificationName, dbo.TbPharmcists.PharmcistId AS Expr2, 
+                  dbo.TbPharmcists.PharmcistName, dbo.TbSupplier.SupplierId AS Expr3, dbo.TbSupplier.SupplierName, dbo.TbOrderItem.OrderItemId, dbo.TbOrderItem.Quantity
+FROM     dbo.TbProducts INNER JOIN
+                  dbo.TbProdcutsClassification ON dbo.TbProducts.ProdcutsClassificationId = dbo.TbProdcutsClassification.ProdcutsClassificationId INNER JOIN
+                  dbo.TbPharmcists ON dbo.TbProducts.PharmcistId = dbo.TbPharmcists.PharmcistId INNER JOIN
+                  dbo.TbSupplier ON dbo.TbProducts.SupplierId = dbo.TbSupplier.SupplierId INNER JOIN
+                  dbo.TbOrderItem ON dbo.TbProducts.ProductId = dbo.TbOrderItem.ProductsId

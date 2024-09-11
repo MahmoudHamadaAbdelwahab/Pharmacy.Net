@@ -1,0 +1,52 @@
+-- Insert data into SupplierModel
+INSERT INTO TbSupplier(SupplierName, Contact_Info) VALUES
+('Supplier 1', 'Contact 1'),
+('Supplier 2', 'Contact 2'),
+('Supplier 3', 'Contact 3');
+
+-- Insert data into ProdcutsClassificationModel
+INSERT INTO TbProdcutsClassification(ProdcutsClassificationName) VALUES
+('Hormonal agents (pituitary)
+'),
+('Antipsychotics'),
+('Analgesics');
+
+-- Insert data into PharmcistsModel
+INSERT INTO TbPharmcists(PharmcistName, PharmcistEmail, Password, Address, PhoneNumber) VALUES
+('Pharmacist 1', 'pharmacist1@example.com', 'password1', 'Address 1', 'Phone 1'),
+('Pharmacist 2', 'pharmacist2@example.com', 'password2', 'Address 2', 'Phone 2'),
+('Pharmacist 3', 'pharmacist3@example.com', 'password3', 'Address 3', 'Phone 3');
+
+-- Insert data into ProductsModel
+INSERT INTO TbProducts(ProductName, Images, ShowInHomePage, Description, Price, StockQuentity, SupplierId, PharmcistId, ProdcutsClassificationId) VALUES
+('Product 1', 'Uploads/Prodcuts/product_01.png', 'Yes', 'Description 1', 100, 10, 1, 1, 1),
+('Product 2', 'Uploads/Prodcuts/product_02.png', 'Yes', 'Description 2', 200, 20, 2, 2, 2),
+('Product 3', 'Uploads/Prodcuts/product_03.png', 'Yes', 'Description 3', 300, 30, 3, 3, 3),
+('Product 4', 'Uploads/Prodcuts/product_04.png', 'Yes', 'Description 4', 400, 40, 4, 4, 4),
+('Product 5', 'Uploads/Prodcuts/product_05.png', 'Yes', 'Description 5', 500, 50, 5, 5, 5),
+('Product 6', 'Uploads/Prodcuts/product_06.png', 'Yes', 'Description 6', 600, 60, 6, 6, 6);
+
+-- Insert data into CustomerModel
+INSERT INTO TbCustomers(CustomerName, CustomerEmail, Password, PhoneNumber, Address, roule) VALUES
+('Customer 1', 'customer1@example.com', 'password1', 'Phone 1', 'Address 1', 'Role 1'),
+('Customer 2', 'customer2@example.com', 'password2', 'Phone 2', 'Address 2', 'Role 2'),
+('Customer 3', 'customer3@example.com', 'password3', 'Phone 3', 'Address 3', 'Role 3');
+
+-- Insert data into PaymentModel
+INSERT INTO TbPayment(PaymentDate, PaymentMethod, Amount , TransactionId) VALUES
+(GETDATE(), 'Credit Card', 100, 1 , 1),
+(GETDATE(), 'Debit Card', 200, 2 , 2),
+(GETDATE(), 'Cash', 300, 3 , 3);
+
+-- Insert data into OrderModel
+INSERT INTO TbOrder(OrderDate, TotalAmount, PaymentId, CustomerId) VALUES
+(GETDATE(), 100, 1, 1),
+(GETDATE(), 200, 2, 2),
+(GETDATE(), 300, 3, 3);
+
+-- Insert data into OrderItemModel
+INSERT INTO TbOrderItem(Quantity, Price, ProductsId, OrderId) VALUES
+(1, 100, 1, 1),
+(2, 200, 2, 2),
+(3, 300, 3, 3);
+
